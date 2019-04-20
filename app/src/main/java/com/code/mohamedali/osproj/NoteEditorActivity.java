@@ -14,6 +14,7 @@ import java.util.HashSet;
 public class NoteEditorActivity extends AppCompatActivity {
 
     int noteID;
+    int myProcessID = android.os.Process.myPid();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,4 +74,5 @@ public class NoteEditorActivity extends AppCompatActivity {
             }
         });
     }
+
 }

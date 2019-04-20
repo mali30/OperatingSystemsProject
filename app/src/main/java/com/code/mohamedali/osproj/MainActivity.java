@@ -21,6 +21,7 @@ import java.util.HashSet;
 public class MainActivity extends AppCompatActivity {
 
     static ArrayList <String> notes = new ArrayList<>();
+    static ArrayList <Integer> myPID = new ArrayList<>();
     static ArrayAdapter arrayAdapter;
 
 
@@ -65,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
 
         // if no notes saved
         if(my_set == null){
-            notes.add("Example Note");
+//            notes.add("Example Note");
 
         }else{
             // brings all data from the set thats been saved and displays to the user
@@ -102,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
                 final int itemToDelete = i;
 
                 new AlertDialog.Builder(MainActivity.this).setIcon(android.R.drawable.ic_dialog_alert)
-                .setTitle("Do you want to delete this Document? ").setMessage("You sure you want to delete?")
+                .setTitle("DONT DELETE ME! ").setMessage("You sure you want to delete?")
                 .setPositiveButton("YES", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -129,4 +130,14 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+    // this method kill the program when the user clicks the button
+    public void kill_process(View view){
+        // get the process ID of application
+        int id= android.os.Process.myPid();
+        // kills it
+        android.os.Process.killProcess(id);
+    }
+
+
 }
